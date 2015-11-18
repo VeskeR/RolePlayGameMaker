@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="RolePlayMaker.CharacterCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cc="clr-namespace:RolePlayMaker"
+             mc:Ignorable="d">
+    <Border Margin="5" Background="#FFFFE9B9" BorderBrush="Black" BorderThickness="1" Width="380" Height="834">
+        <StackPanel>
+            <StackPanel Margin="5">
+                <DockPanel LastChildFill="True" Margin="2">
+                    <TextBlock x:Name="TxtBlockCharName" FontSize="16" Text="Имя: " HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                </DockPanel>
+                <DockPanel LastChildFill="False" Margin="2">
+                    <TextBlock Text="HP: " VerticalAlignment="Center" Margin="5,0,0,0"></TextBlock>
+                    <TextBlock x:Name="TxtBlockCurrentHP" Text="100" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="/" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock x:Name ="TxtBlockMaxHP" Text="100" VerticalAlignment="Center"></TextBlock>
+
+                    <Button Content="+1" Width="20" Margin="12,0,0,0" Click="AddOneToMaxHP"></Button>
+                    <Button Content="-1" Width="20" Margin="4,0" Click="RemoveOneFromMaxHP"></Button>
+
+                    <Button Width="60" DockPanel.Dock="Right" Content="Добавить" Click="AddHP"></Button>
+                    <TextBox x:Name="TxtBoxAddHP" Width="40" DockPanel.Dock="Right" Margin="5,0"></TextBox>
+                    <Button Content="-5" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteHP"></Button>
+                    <Button Content="-1" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteHP"></Button>
+                    <Button Content="+5" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteHP"></Button>
+                    <Button Content="+1" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteHP"></Button>
+                </DockPanel>
+                <DockPanel LastChildFill="False" Margin="2">
+                    <TextBlock Text="MP: " VerticalAlignment="Center" Margin="5,0,0,0"></TextBlock>
+                    <TextBlock x:Name="TxtBlockCurrentMP" Text="100" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="/" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock x:Name ="TxtBlockMaxMP" Text="100" VerticalAlignment="Center"></TextBlock>
+
+                    <Button Content="+1" Width="20" Margin="10,0,0,0" Click="AddOneToMaxMP"></Button>
+                    <Button Content="-1" Width="20" Margin="4,0" Click="RemoveOneFromMaxMP"></Button>
+
+                    <Button Width="60" DockPanel.Dock="Right" Content="Добавить" Click="AddMP"></Button>
+                    <TextBox x:Name="TxtBoxAddMP" Width="40" DockPanel.Dock="Right" Margin="5,0"></TextBox>
+                    <Button Content="-5" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteMP"></Button>
+                    <Button Content="-1" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteMP"></Button>
+                    <Button Content="+5" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteMP"></Button>
+                    <Button Content="+1" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteMP"></Button>
+                </DockPanel>
+                <DockPanel LastChildFill="False" Margin="2">
+                    <TextBlock Text="Бодрость: " VerticalAlignment="Center" Margin="5,0,0,0"></TextBlock>
+                    <TextBlock x:Name="TxtBlockCurrentCheerfulness" Text="100" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="/" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock x:Name ="TxtBlockMaxCheerfulness" Text="100" VerticalAlignment="Center"></TextBlock>
+                    <Button Width="60" DockPanel.Dock="Right" Content="Добавить" Click="AddCheerfulness"></Button>
+                    <TextBox x:Name="TxtBoxAddCheerfulness" Width="40" DockPanel.Dock="Right" Margin="5,0"></TextBox>
+                    <Button Content="-5" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteCheerfulness"></Button>
+                    <Button Content="-1" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteCheerfulness"></Button>
+                    <Button Content="+5" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteCheerfulness"></Button>
+                    <Button Content="+1" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteCheerfulness"></Button>
+                </DockPanel>
+                <DockPanel LastChildFill="False" Margin="2">
+                    <TextBlock Text="Сытость: " VerticalAlignment="Center" Margin="5,0,0,0"></TextBlock>
+                    <TextBlock x:Name="TxtBlockCurrentFood" Text="100" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Text="/" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock x:Name ="TxtBlockMaxFood" Text="100" VerticalAlignment="Center"></TextBlock>
+                    <Button Width="60" DockPanel.Dock="Right" Content="Добавить" Click="AddFood"></Button>
+                    <TextBox x:Name="TxtBoxAddFood" Width="40" DockPanel.Dock="Right" Margin="5,0"></TextBox>
+                    <Button Content="-5" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteFood"></Button>
+                    <Button Content="-1" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteFood"></Button>
+                    <Button Content="+5" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteFood"></Button>
+                    <Button Content="+1" DockPanel.Dock="Right" Width="20" Margin="1,0" Click="AddConcreteFood"></Button>
+                </DockPanel>
+            </StackPanel>
+            <Grid Margin="10" Width="308" Height="304">
+                <Image Source="Images/CharInv.jpg" Stretch="Fill"/>
+
+                <Image Source="Images/Pixel.png" Width="32" Height="32" Margin="138,10,138,262"></Image>
+                <Image Source="Images/Pixel.png" Width="32" Height="32" Margin="138,71,138,201"></Image>
+                <Image Source="Images/Pixel.png" Width="32" Height="32" Margin="138,185,138,87"></Image>
+                <Image Source="Images/Pixel.png" Width="32" Height="32" Margin="138,262,138,10"></Image>
+
+                <Image Source="Images/Pixel.png" Width="32" Height="32" Margin="266,39,10,233"></Image>
+                <Image Source="Images/Pixel.png" Width="32" Height="32" Margin="10,39,266,233"></Image>
+
+                <Image Source="Images/Pixel.png" Width="32" Height="32" Margin="266,111,10,161"></Image>
+                <Image Source="Images/Pixel.png" Width="32" Height="32" Margin="266,148,10,124"></Image>
+                <Image Source="Images/Pixel.png" Width="32" Height="32" Margin="266,185,10,87"></Image>
+            </Grid>
+            <StackPanel Margin="5,0,5,5">
+                <Label Content="Перки:"></Label>
+                <ListBox x:Name="ListBoxPerks" Height="164" Background="#FFE7E1FF" BorderBrush="#FF252525" Foreground="Black"></ListBox>
+                
+                <DockPanel LastChildFill="False" Margin="0,5">
+                    <Button DockPanel.Dock="Left" Content="Добавить перк" Click="AddPerk"></Button>
+                    <Button DockPanel.Dock="Right" Content="Удалить перк" Click="RemovePerk"></Button>
+                </DockPanel>
+
+                <DockPanel LastChildFill="False">
+                    <Label Content="Инвертарь:" DockPanel.Dock="Left"></Label>
+                    <Button Content="-" Height="20" Width="14" DockPanel.Dock="Right" Margin="2,0" Click="DecreaseItemQuantity"></Button>
+                    <Button Content="+" Height="20" Width="14" DockPanel.Dock="Right" Margin="2,0" Click="IncreaseItemQuantity"></Button>
+                </DockPanel>
+                
+                <ListBox x:Name="ListBoxInventory" Height="84" BorderBrush="#FF252525" Foreground="Black" ScrollViewer.HorizontalScrollBarVisibility="Disabled">                </ListBox>
+                
+                <Grid Margin="0,5">
+                    <Button DockPanel.Dock="Left" Content="Добавить вещь" Width="100" Click="AddNewItem" Margin="10,0,258,0"></Button>
+                    <Button VerticalAlignment="Center" Content="Одеть вещь" Width="100" Click="WearUpItem" Margin="134,0"></Button>
+                    <Button DockPanel.Dock="Right" Content="Снять вещь" Width="100" Click="UnwearItem" Margin="258,0,10,0"></Button>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>
